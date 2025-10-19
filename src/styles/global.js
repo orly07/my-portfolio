@@ -1,10 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     html {
@@ -21,6 +23,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     background-color: ${({ theme }) => theme.colors.bg};
     word-wrap: break-word;
+    scroll-behavior: smooth;
+
   }
 
     ::-webkit-scrollbar {
