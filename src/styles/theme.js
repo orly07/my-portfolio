@@ -1,66 +1,80 @@
-export const theme = {
-  colors: {
-    primary: "#8750f7",
-    primary1: "#2400ff",
-    primary2: "#9b8dff",
-    primary3: "#4654f9",
+// src/styles/theme.js
 
-    // Text and UI
-    text: "#DDDDDD",
-    white: "#FFFFFF",
-    black: "#000000",
-    black2: "#050709",
-    black3: "#5c6266",
-    black4: "#585859",
-    border: "#1b2227",
-    border1: "#2a343c",
-    offWhite: "#f6f3fc",
+export const theme = {
+  // 🎨 COLORS
+  colors: {
+    // Primary Palette
+    primary: "#8750f7",
+    primaryLight: "#9b8dff",
+    primaryDark: "#2400ff",
+
+    // Accent & Secondary
+    accent: "#8750F7",
+    accentDark: "#2a1454",
+    secondary: "#2a1454",
 
     // Background
-    bg: "#140C1C",
-    bg1: "#050709",
-    bg2: "#0e1418",
-    bg3: "#10171c",
-    bg4: "#151b1f",
+    background: {
+      main: "#140C1C",
+      light: "#0e1418",
+      dark: "#050709",
+      alt: "#10171c",
+      deep: "#151b1f",
+    },
 
-    // Secondary / accent
-    secondary: "#2a1454",
-    accent: "#8750F7",
-    accent1: "#0f0715",
-    accent2: "#140c1c",
+    // Text
+    text: {
+      main: "#DDDDDD",
+      light: "#f6f3fc",
+      dark: "#000000",
+      muted: "#5c6266",
+    },
 
-    // Grays
-    grey1: "#747779",
-    grey2: "#d9d9d9",
-    grey3: "#dddddd",
-    grey4: "#22272c",
-    grey5: "#636363",
-    grey6: "#1b262e",
+    // Borders
+    border: {
+      light: "#2a343c",
+      dark: "#1b2227",
+    },
+
+    // Grayscale
+    gray: {
+      100: "#f6f3fc",
+      200: "#dddddd",
+      300: "#d9d9d9",
+      400: "#747779",
+      500: "#636363",
+      600: "#22272c",
+      700: "#1b262e",
+    },
 
     // Scrollbar
-    scrollbarPrimary: "#8750f7",
-    scrollbarSecondary: "#2a1454",
+    scrollbar: {
+      primary: "#8750f7",
+      secondary: "#2a1454",
+    },
   },
 
-
+  // ✍️ TYPOGRAPHY
   typography: {
     body: {
       fontFamily: "'Sora', sans-serif",
       fontSize: "16px",
       fontWeight: 400,
       lineHeight: 1.6,
+      footerText: "12px"
     },
+
     heading: {
       fontFamily: "'Sora', sans-serif",
-      weights: {
-        normal: 400,
+      weight: {
+        regular: 400,
         medium: 500,
         semiBold: 600,
         bold: 700,
         extraBold: 800,
         black: 900,
       },
-      sizes: {
+      size: {
         h1: "65px",
         h2: "45px",
         h3: "30px",
@@ -70,24 +84,16 @@ export const theme = {
         subtitle: "36px",
       },
     },
-    russo: "'Russo One', sans-serif",
-  },
-  body: {
-    fontFamily: "'Sora', sans-serif",
-    fontSize: "16px",
-    fontWeight: 400,
-    lineHeight: 1.6,
-  },
-  heading: {
-    fontFamily: "'Sora', sans-serif",
-    weights: {
-      normal: 400,
-      medium: 500,
-      semiBold: 600,
-      bold: 700,
-      extraBold: 800,
-      black: 900,
+
+    alt: {
+      russo: "'Russo One', sans-serif",
+      roboto: "'Roboto', sans-serif",
+      robotoSlab: "'Roboto Slab', serif",
     },
+  },
+
+  // 🧱 TEXT VARIANTS
+  textVariants: {
     primary: {
       fontFamily: "'Roboto', sans-serif",
       fontWeight: 600,
@@ -96,7 +102,7 @@ export const theme = {
       fontFamily: "'Roboto Slab', serif",
       fontWeight: 400,
     },
-    text: {
+    normal: {
       fontFamily: "'Roboto', sans-serif",
       fontWeight: 400,
     },
@@ -105,4 +111,14 @@ export const theme = {
       fontWeight: 500,
     },
   },
+
+  media: {
+  xs: "(max-width: 480px)",    // Mobile (portrait)
+  sm: "(max-width: 576px)",    // Mobile (landscape)
+  md: "(max-width: 768px)",    // Tablets
+  lg: "(max-width: 992px)",    // Small laptops
+  xl: "(max-width: 1200px)",   // Desktops
+  xxl: "(max-width: 1400px)",  // Large screens
+},
+
 };
