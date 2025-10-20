@@ -1,5 +1,15 @@
 import styled, { css } from "styled-components";
 
+// Reusable mixins for better maintainability
+const hoverTransition = css`
+  transition: all 0.3s ease;
+`;
+
+const flexCenter = css`
+  display: flex;
+  align-items: center;
+`;
+
 /* Navbar Wrapper */
 export const NavbarWrapper = styled.nav`
   position: fixed;
@@ -30,48 +40,53 @@ export const NavbarWrapper = styled.nav`
 
 /* Layout Container */
 export const Container = styled.div`
-  display: flex;
+  ${flexCenter}
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: ${({mb}) => mb || "0"};
+  margin-bottom: ${({ mb }) => mb || "0"};
 `;
 
 /* Brand */
 export const Brand = styled.div`
-  display: flex;
-  align-items: center;
+  ${flexCenter}
   gap: 0.625rem;
 `;
 
 export const Logo = styled.img`
   width: 50px;
-  height: auto;
+  height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  ${hoverTransition}
+
   &:hover {
     transform: scale(1.05);
   }
 `;
 
-export const Heading = styled.h1`
+const headingStyles = css`
   font-size: ${({ theme }) => theme.typography.body.fontSize};
   cursor: pointer;
-  transition: color 0.3s ease;
+  ${hoverTransition}
+
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
+`;
+
+export const Heading = styled.h1`
+  ${headingStyles}
+
   @media ${({ theme }) => theme.media.md} {
     display: none;
   }
 `;
 
 export const Heading2 = styled.h2`
-  font-size: ${({ theme }) => theme.typography.body.fontSize};
-  cursor: pointer;
-  transition: color 0.3s ease;
-  &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+  ${headingStyles}
+  display: none;
+
+  @media ${({ theme }) => theme.media.md} {
+    display: block;
   }
 `;
 
@@ -85,27 +100,34 @@ export const MenuIcon = styled.button`
   transition: transform 0.2s ease;
   margin-left: 1.25rem;
   z-index: 1000;
+  padding: 0.25rem;
 
   @media ${({ theme }) => theme.media.lg} {
     display: block;
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 2px;
   }
 `;
 
 /* Desktop Nav */
 export const NavlistDesktop = styled.ul`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  ${flexCenter}
+  gap: 0.75rem;
   margin-left: auto;
 
   li {
     list-style: none;
+
     a {
       text-decoration: none;
       color: ${({ theme }) => theme.colors.text.light};
       font-weight: ${({ theme }) => theme.typography.heading.weight.medium};
-      transition: all 0.3s ease;
-
+      ${hoverTransition}
+      padding: 0 0.625rem;
+      cursor: pointer;
       &:hover {
         color: ${({ theme }) => theme.colors.primary};
         text-shadow: 0 0 6px ${({ theme }) => theme.colors.primary}66;
@@ -114,6 +136,11 @@ export const NavlistDesktop = styled.ul`
       &.active {
         color: ${({ theme }) => theme.colors.primary};
         font-weight: ${({ theme }) => theme.typography.heading.weight.bold};
+      }
+
+      &:focus-visible {
+        outline: 2px solid ${({ theme }) => theme.colors.primary};
+        outline-offset: 2px;
       }
     }
   }
@@ -153,6 +180,7 @@ export const NavlistMobile = styled.ul`
     top: 0;
     left: ${({ $isOpen }) => ($isOpen ? "0" : "-100%")};
     width: 70%;
+    max-width: 300px;
     height: 100vh;
     background-color: ${({ theme }) => theme.colors.background.main};
     backdrop-filter: blur(10px);
@@ -160,17 +188,18 @@ export const NavlistMobile = styled.ul`
     z-index: 999;
     padding: 20px;
     gap: 0.625rem;
+    overflow-y: auto;
 
     li {
       width: 100%;
       list-style: none;
+
       a {
         text-decoration: none;
         color: ${({ theme }) => theme.colors.text.light};
         font-size: ${({ theme }) => theme.typography.heading.size.h6};
-        transition: color 0.3s ease;
-        display: flex;
-        align-items: center;
+        ${hoverTransition}
+        ${flexCenter}
         gap: 0.75rem;
         width: 100%;
         padding: 0.75rem 0.75rem 0.75rem 3rem;
@@ -187,31 +216,33 @@ export const NavlistMobile = styled.ul`
             theme.typography.heading.weight.semiBold};
           background-color: ${({ theme }) => theme.colors.accent};
         }
+
+        &:focus-visible {
+          outline: 2px solid ${({ theme }) => theme.colors.primary};
+          outline-offset: 2px;
+        }
       }
     }
   }
 `;
 
 export const MobileControls = styled.div`
-  display: flex;
-  align-items: center;
+  ${flexCenter}
   gap: 1rem;
 `;
 
 export const MobileHeader = styled.div`
-  display: flex;
-  align-items: center;
+  ${flexCenter}
   gap: 0.625rem;
   margin-bottom: 2rem;
 `;
 
-
 export const NavlistFooter = styled.div`
-  border-top: 1px solid ${({theme}) => theme.colors.text.main};
+  border-top: 1px solid ${({ theme }) => theme.colors.text.main};
   margin-top: 50px;
   padding: 10px;
-  
+
   p {
-    font-size: ${({theme}) => theme.typography.body.footerText};
+    font-size: ${({ theme }) => theme.typography.body.footerText};
   }
-`
+`;

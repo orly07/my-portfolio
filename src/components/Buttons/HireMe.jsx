@@ -1,3 +1,4 @@
+// src/components/Buttons/HireMe.jsx
 import * as S from "./styles/HireMe.styled"
 const HireMe = () => {
   return (

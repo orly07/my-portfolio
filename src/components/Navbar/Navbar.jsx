@@ -1,35 +1,88 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo, lazy, Suspense } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
-
+import { navLinks } from "./navLinks";
 import * as S from "./Navbar.styled";
 import logo from "../../assets/my-logo.png";
-import { HireMe } from "../Buttons";
-import { navLinks } from "./navLinks";
+
+const HireMe = lazy(() => import("../Buttons/HireMe"));
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Scroll effect
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 100);
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 100);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsOpen((prev) => !prev);
-  const closeMenu = () => setIsOpen(false);
+  const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => setIsOpen(false), []);
+
+  const mobileNavLinks = useMemo(() => (
+    navLinks.map(({ id, label, to, icon: Icon }) => (
+      <li key={id}>
+        <Link
+          to={to}
+          spy
+          smooth
+          duration={1000}
+          offset={-50}
+          activeClass="active"
+          onClick={closeMenu}
+        >
+          {Icon && <Icon size={18} />}
+          <span>{label}</span>
+        </Link>
+      </li>
+    ))
+  ), [closeMenu]);
+
+  const desktopNavLinks = useMemo(() => (
+    navLinks.map(({ id, label, to }) => (
+      <li key={id}>
+        <Link
+          to={to}
+          spy
+          smooth
+          duration={1000}
+          offset={-50}
+          activeClass="active"
+        >
+          <span>{label}</span>
+        </Link>
+      </li>
+    ))
+  ), []);
+
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
 
   return (
     <>
-      {/* Navbar */}
       <S.NavbarWrapper $isScrolled={isScrolled}>
         <S.Container>
           {/* Brand */}
           <S.Brand>
             <Link to="home" smooth duration={1000}>
-              <S.Logo src={logo} alt="My Logo" />
+              <S.Logo 
+                src={logo} 
+                alt="My Logo" 
+                width="50"
+                height="50"
+                loading="eager"
+              />
             </Link>
             <S.Heading>
               <Link to="home" smooth duration={1000}>
@@ -41,26 +94,19 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <S.NavlistDesktop>
-            {navLinks.map(({ id, label, to }) => (
-              <li key={id}>
-                <Link
-                  to={to}
-                  spy
-                  smooth
-                  duration={1000}
-                  offset={-50}
-                  activeClass="active"
-                >
-                  <span>{label}</span>
-                </Link>
-              </li>
-            ))}
+            {desktopNavLinks}
           </S.NavlistDesktop>
 
           {/* Mobile Menu Icon + HireMe */}
           <S.MobileControls>
-            <HireMe />
-            <S.MenuIcon onClick={toggleMenu} aria-label="Toggle menu">
+            <Suspense fallback={<div>Loading...</div>}>
+              <HireMe />
+            </Suspense>
+            <S.MenuIcon 
+              onClick={toggleMenu} 
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+            >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </S.MenuIcon>
           </S.MobileControls>
@@ -68,39 +114,32 @@ const Navbar = () => {
       </S.NavbarWrapper>
 
       {/* Mobile Overlay */}
-      <S.MobileOverlay $isOpen={isOpen} onClick={closeMenu} />
+      <S.MobileOverlay 
+        $isOpen={isOpen} 
+        onClick={closeMenu} 
+        aria-hidden={!isOpen}
+      />
 
       {/* Mobile Menu */}
-      <S.NavlistMobile $isOpen={isOpen}>
-        {/* Logo + Name */}
+      <S.NavlistMobile 
+        $isOpen={isOpen} 
+        aria-hidden={!isOpen}
+      >
         <S.MobileHeader>
-          <S.Logo src={logo} />
+          <S.Logo 
+            src={logo} 
+            alt="My Logo"
+            width="50"
+            height="50"
+          />
           <S.Heading2>rlando</S.Heading2>
         </S.MobileHeader>
 
-        {/* Nav Links */}
-        {navLinks.map(({ id, label, to, icon: Icon }) => (
-          <li key={id}>
-            <Link
-              to={to}
-              spy
-              smooth
-              duration={1000}
-              offset={-50}
-              activeClass="active"
-              onClick={closeMenu}
-            >
-              {Icon && <Icon size={18} />}
-              <span>{label}</span>
-            </Link>
-          </li>
-        ))}
+        {mobileNavLinks}
 
-        {/* Footer */}
         <S.NavlistFooter>
           <p>
-            Developed by Orlando Dela Cruz | &copy;{new Date().getFullYear()}{" "}
-            All Rights Reserved
+            Developed by Orlando Dela Cruz | &copy;{currentYear} All Rights Reserved
           </p>
         </S.NavlistFooter>
       </S.NavlistMobile>
