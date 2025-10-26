@@ -35,7 +35,11 @@ export const ButtonStyled = styled.button`
 
   @media ${({ theme }) => theme.media.lg} {
     font-size: ${({ theme }) => theme.typography.body.fontSize};
-    font-weight: ${({ theme }) => theme.typography.heading.weight.regular};
+    font-weight: ${({theme}) => theme.typography.body.fontWeight};
     padding: 15px 40px;
+  }
+
+  @media ${({theme}) => theme.media.sm} {
+    padding: 10px 20px;
   }
 `;

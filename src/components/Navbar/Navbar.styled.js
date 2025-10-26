@@ -229,6 +229,10 @@ export const NavlistMobile = styled.ul`
 export const MobileControls = styled.div`
   ${flexCenter}
   gap: 1rem;
+
+  @media ${({theme}) => theme.media.sm} {
+    gap: 0;
+  }
 `;
 
 export const MobileHeader = styled.div`
