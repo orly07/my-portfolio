@@ -49,8 +49,8 @@ export const theme = {
 
     // Scrollbar
     scrollbar: {
-      primary: "#2563eb",      // Primary blue
-      secondary: "#1e40af",    // Secondary blue
+      primary: "#4086f8ff",      // Primary blue
+      secondary: "#1839a3ff",    // Secondary blue
     },
   },
 

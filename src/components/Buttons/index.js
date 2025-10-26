@@ -1,3 +1,3 @@
-export { default as HireMe } from "./HireMe";
-export { default as Download } from "./Download";
+export { default as GetinTouch } from "./GetinTouch";
+export { default as ViewProjects } from "./ViewProjects";
 export {default as Social} from "./Social"

@@ -17,7 +17,7 @@ const Navbar = () => {
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 100);
+          setIsScrolled(window.scrollY > 50);
           ticking = false;
         });
         ticking = true;

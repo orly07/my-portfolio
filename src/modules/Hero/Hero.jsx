@@ -2,7 +2,7 @@ import { memo, useMemo, lazy, Suspense } from "react";
 import { heroContent } from "../../data/data";
 import * as S from "./Hero.styled";
 
-const Download = lazy(() => import("../../components/Buttons/Download"));
+const ViewProjects = lazy(() => import("../../components/Buttons/ViewProjects"));
 const Social = lazy(() => import("../../components/Buttons/Social"));
 
 const Hero = memo(({ id }) => {
@@ -24,7 +24,7 @@ const Hero = memo(({ id }) => {
 
       <S.ButtonContainer>
        <Suspense fallback={<div>Loading...</div>}>
-          <Download />
+          <ViewProjects />
           <Social />
        </Suspense>
       </S.ButtonContainer>

@@ -22,10 +22,6 @@ export const NavbarWrapper = styled.nav`
   padding: 6vh 7vw 3vh;
   transition: all 0.4s ease;
 
-  @media ${({ theme }) => theme.media.xl} {
-    padding: 6vh 2vw 3vh;
-  }
-
   ${({ $isScrolled, theme }) =>
     $isScrolled &&
     css`
@@ -36,6 +32,24 @@ export const NavbarWrapper = styled.nav`
         0 4px 25px ${theme.colors.accent}55,
         0 6px 40px ${theme.colors.secondary}33;
     `}
+
+  @media ${({ theme }) => theme.media.xl} {
+    padding: 6vh 2vw 3vh;
+
+    ${({ $isScrolled }) =>
+      $isScrolled &&
+      css`
+        padding: 20px;
+      `}
+  }
+
+  @media ${({ theme }) => theme.media.md} {
+    ${({ $isScrolled }) =>
+      $isScrolled &&
+      css`
+        padding: 10px;
+      `}
+  }
 `;
 
 /* Layout Container */
@@ -229,7 +243,7 @@ export const MobileControls = styled.div`
   ${flexCenter}
   gap: 1rem;
 
-  @media ${({theme}) => theme.media.sm} {
+  @media ${({ theme }) => theme.media.sm} {
     gap: 0;
   }
 `;

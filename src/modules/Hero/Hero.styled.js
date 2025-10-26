@@ -156,7 +156,7 @@ export const Profile = styled.img`
 `;
 
 export const ButtonContainer = styled.div`
-  width: 100%;
+  min-width: 100%;
   padding: 0 100px 20px;
   @media ${({ theme }) => theme.media.xl} {
     display: flex;
