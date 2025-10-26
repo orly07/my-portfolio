@@ -36,7 +36,7 @@ export const HeroContainer = styled.div`
   @media ${({ theme }) => theme.media.sm} {
     flex-direction: column;
     text-align: center;
-    padding: 120px 0 0;
+    padding: 100px 0 0;
     gap: 0;
   }
 `;
@@ -71,6 +71,10 @@ export const Name = styled.h1`
   @media ${({ theme }) => theme.media.md} {
     font-size: ${({ theme }) => theme.typography.heading.size.h5};
   }
+
+  @media ${({ theme }) => theme.media.sm} {
+    font-size: ${({ theme }) => theme.typography.heading.size.h6};
+  }
 `;
 
 export const Title = styled.h2`
@@ -100,7 +104,7 @@ export const Title = styled.h2`
   }
 
   @media ${({ theme }) => theme.media.sm} {
-    font-size: ${({ theme }) => theme.typography.heading.size.h2};
+    font-size: ${({ theme }) => theme.typography.heading.size.h3};
   }
 `;
 
@@ -108,7 +112,7 @@ export const Bio = styled.p`
   font-size: ${({ theme }) => theme.typography.heading.size.h6};
 
   @media ${({ theme }) => theme.media.md} {
-    font: 12px;
+   font-size: small;
   }
 `;
 
@@ -120,7 +124,7 @@ export const ImageContainer = styled.div`
 
   @media ${({ theme }) => theme.media.md} {
     order: 1;
-    width: 100%;
+    min-width: 100%;
   }
 `;
 
@@ -145,7 +149,7 @@ export const Profile = styled.img`
   }
 
   @media ${({ theme }) => theme.media.md} {
-    max-width: 400px;
+    max-width: 300px;
     transform: rotate(0);
   }
 `;
