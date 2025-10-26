@@ -5,7 +5,7 @@ export const ButtonStyled = styled.button`
   padding: 12px 30px;
   border-radius: 50px;
   cursor: pointer;
-  margin-left: 1.3rem;
+  margin-left: auto;
 
   font-family: ${({ theme }) => theme.typography.body.fontFamily};
   font-size: ${({ theme }) => theme.typography.heading.size.h6};

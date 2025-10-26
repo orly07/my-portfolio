@@ -5,7 +5,7 @@ import * as S from "./Navbar.styled";
 import { navLinks } from "../../data/data";
 import logo from "../../assets/my-logo.webp";
 
-const HireMe = lazy(() => import("../Buttons/HireMe"));
+const GetinTouch = lazy(() => import("../Buttons/GetinTouch"));
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -100,7 +100,7 @@ const Navbar = () => {
           {/* Mobile Menu Icon + HireMe */}
           <S.MobileControls>
             <Suspense fallback={<div>Loading...</div>}>
-              <HireMe />
+              <GetinTouch />
             </Suspense>
             <S.MenuIcon 
               onClick={toggleMenu} 
