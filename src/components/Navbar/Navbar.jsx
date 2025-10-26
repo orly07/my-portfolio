@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import * as S from "./Navbar.styled";
 import { navLinks } from "../../data/data";
-import logo from "../../assets/my-logo.png";
+import logo from "../../assets/my-logo.webp";
 
 const HireMe = lazy(() => import("../Buttons/HireMe"));
 

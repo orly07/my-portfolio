@@ -1,7 +1,7 @@
 // src/data/data.js
 import { Home, User, Code, Briefcase, FileText, Mail } from "lucide-react";
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaGlobe } from "react-icons/fa";
-import profile from "../assets/profile.jpg";
+import profile from "../assets/my-profile.webp";
 // Navlinks
 export const navLinks = [
   { id: 1, label: "Home", to: "home", icon: Home },

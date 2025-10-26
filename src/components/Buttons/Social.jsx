@@ -5,7 +5,7 @@ const Social = () => {
   return (
     <IconWrapper>
       {socials.map(({ id, icon: Icon }) => (
-        <IconStyled>{Icon && <Icon key={id} />}</IconStyled>
+        <IconStyled key={id}>{Icon && <Icon />}</IconStyled>
       ))}
     </IconWrapper>
   );
