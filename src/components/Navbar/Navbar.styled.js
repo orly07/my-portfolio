@@ -171,10 +171,9 @@ export const MobileOverlay = styled.div`
 export const NavlistMobile = styled.ul`
   display: none;
 
-  @media ${({ theme }) => theme.media.md} {
+  @media ${({ theme }) => theme.media.lg} {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     align-items: start;
     position: fixed;
     top: 0;
