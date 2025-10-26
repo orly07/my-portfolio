@@ -137,6 +137,8 @@ const Navbar = () => {
 
         {mobileNavLinks}
 
+
+
         <S.NavlistFooter>
           <p>
             Developed by Orlando Dela Cruz | &copy;{currentYear} All Rights Reserved

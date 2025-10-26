@@ -171,10 +171,10 @@ export const MobileOverlay = styled.div`
 export const NavlistMobile = styled.ul`
   display: none;
 
-  @media ${({ theme }) => theme.media.lg} {
+  @media ${({ theme }) => theme.media.md} {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: start;
     position: fixed;
     top: 0;
@@ -245,7 +245,7 @@ export const NavlistFooter = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.text.main};
   margin-top: 50px;
   padding: 10px;
-
+  margin-top: auto;
   p {
     font-size: ${({ theme }) => theme.typography.body.footerText};
   }
