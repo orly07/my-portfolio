@@ -1,57 +1,56 @@
 // src/styles/theme.js
 
 export const theme = {
-  // 🎨 COLORS
+  // 🎨 COLORS - Blue Palette
   colors: {
-    // Primary Palette
-    primary: "#8750f7",
-    primaryLight: "#9b8dff",
-    primaryDark: "#2400ff",
+    // Primary Palette - Blue
+    primary: "#2563eb",        // Vibrant blue
+    primaryLight: "#4086f8ff",   // Lighter blue
+    primaryDark: "#1646ccff",    // Darker blue
 
-    // Accent & Secondary
+    // Accent & Secondary - Blue variants
+    accent: "#60a5fa",         // Soft blue accent
+    accentDark: "#1839a3ff",     // Deep blue
+    secondary: "#1e40af",      // Secondary blue
 
-    accent: "#8750F7",
-    accentDark: "#2a1454",
-    secondary: "#2a1454",
-
-    // Background
+    // Background - Dark with blue undertones
     background: {
-      main: "#140C1C",
-      light: "#0e1418",
-      dark: "#050709",
-      alt: "#10171c",
-      deep: "#151b1f",
+      main: "#0b1222ff",         // Dark blue-black
+      light: "#1e293b",        // Blue-gray
+      dark: "#020617",         // Near black
+      alt: "#1e293b",          // Alternate blue-gray
+      deep: "#0f172a",         // Deep blue-black
     },
 
     // Text
     text: {
-      main: "#DDDDDD",
-      light: "#f6f3fc",
-      dark: "#000000",
-      muted: "#5c6266",
+      main: "#f1f5f9",         // Light blue-gray
+      light: "#f8fafc",        // Very light blue
+      dark: "#000000",         // Black
+      muted: "#64748b",        // Muted blue-gray
     },
 
     // Borders
     border: {
-      light: "#2a343c",
-      dark: "#1b2227",
+      light: "#334155",        // Medium blue-gray
+      dark: "#1e293b",         // Dark blue-gray
     },
 
-    // Grayscale
+    // Grayscale - Blue tinted
     gray: {
-      100: "#f6f3fc",
-      200: "#dddddd",
-      300: "#d9d9d9",
-      400: "#747779",
-      500: "#636363",
-      600: "#22272c",
-      700: "#1b262e",
+      100: "#f8fafc",          // Lightest blue
+      200: "#f1f5f9",          // Very light blue
+      300: "#e2e8f0",          // Light blue-gray
+      400: "#94a3b8",          // Medium blue-gray
+      500: "#64748b",          // Blue-gray
+      600: "#475569",          // Dark blue-gray
+      700: "#334155",          // Darker blue-gray
     },
 
     // Scrollbar
     scrollbar: {
-      primary: "#8750f7",
-      secondary: "#2a1454",
+      primary: "#2563eb",      // Primary blue
+      secondary: "#1e40af",    // Secondary blue
     },
   },
 
@@ -114,12 +113,11 @@ export const theme = {
   },
 
   media: {
-  xs: "(max-width: 480px)",    // Mobile (portrait)
-  sm: "(max-width: 576px)",    // Mobile (landscape)
-  md: "(max-width: 768px)",    // Tablets
-  lg: "(max-width: 992px)",    // Small laptops
-  xl: "(max-width: 1200px)",   // Desktops
-  xxl: "(max-width: 1400px)",  // Large screens
-},
-
+    xs: "(max-width: 480px)",    // Mobile (portrait)
+    sm: "(max-width: 576px)",    // Mobile (landscape)
+    md: "(max-width: 768px)",    // Tablets
+    lg: "(max-width: 992px)",    // Small laptops
+    xl: "(max-width: 1200px)",   // Desktops
+    xxl: "(max-width: 1400px)",  // Large screens
+  },
 };

@@ -88,8 +88,9 @@ export const Title = styled.h2`
   background: linear-gradient(
     90deg,
     ${({ theme }) => theme.colors.primaryDark} 0%,
-    ${({ theme }) => theme.colors.primary} 40%,
-    ${({ theme }) => theme.colors.primaryLight} 100%
+    ${({ theme }) => theme.colors.primary} 25%,
+    ${({ theme }) => theme.colors.primaryLight} 60%,
+    ${({ theme }) => theme.colors.text.main} 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -112,7 +113,7 @@ export const Bio = styled.p`
   font-size: ${({ theme }) => theme.typography.heading.size.h6};
 
   @media ${({ theme }) => theme.media.md} {
-   font-size: small;
+    font-size: small;
   }
 `;
 
