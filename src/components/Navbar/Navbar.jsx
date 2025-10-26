@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback, useMemo, lazy, Suspense } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "./navLinks";
 import * as S from "./Navbar.styled";
+import { navLinks } from "../../data/data";
 import logo from "../../assets/my-logo.png";
 
 const HireMe = lazy(() => import("../Buttons/HireMe"));

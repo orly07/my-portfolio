@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Navbar from "./components/Navbar";
+import Hero from "./modules/Hero";
 
 const Section = styled.section`
   height: 100vh;
@@ -9,7 +10,7 @@ const Section = styled.section`
   align-items: center;
   font-size: ${({ theme }) => theme.typography.heading.size.h1};
   color: ${({ theme }) => theme.colors.text.light};
-  background-color: ${({ theme }) => theme.colors.background.main};
+  background-color: ${({ theme }) => theme.colors.background.dark};
   transition: all 0.3s ease;
 
   @media ${({ theme }) => theme.media.md} {
@@ -22,7 +23,7 @@ function App() {
     <>
       <Navbar />
       <main>
-        <Section id="home">Home</Section>
+        <Hero id="home"/>
         <Section id="about">About</Section>
         <Section id="skills">Skills</Section>
         <Section id="projects">Projects</Section>

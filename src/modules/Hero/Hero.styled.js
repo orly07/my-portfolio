@@ -4,7 +4,12 @@ export const HeroWrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: ${({theme}) => theme.colors.background.main};
+  justify-content: space-between;
+  background-color: ${({ theme }) => theme.colors.background.main};
+
+  @media ${({ theme }) => theme.media.md} {
+    height: 100%;
+  }
 `;
 
 export const HeroContainer = styled.div`
@@ -12,17 +17,60 @@ export const HeroContainer = styled.div`
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding: 120px 100px 0 100px;
+  padding: 8rem 3rem 0;
   min-width: 100%;
-  gap: 20px;
+  gap: 1.5rem;
+
+  @media ${({ theme }) => theme.media.xl} {
+    padding: 8rem 3rem 0;
+  }
+  @media ${({ theme }) => theme.media.lg} {
+    padding: 8rem 3rem 0;
+  }
+  @media ${({ theme }) => theme.media.md} {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 20px 0;
+  }
+
+  @media ${({ theme }) => theme.media.sm} {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 0 0;
+    gap: 0;
+  }
 `;
 
 export const HeaderContainer = styled.div`
   max-width: 60%;
+
+  @media ${({ theme }) => theme.media.md} {
+    order: 2;
+    max-width: 100%;
+    padding: 0 1.25rem;
+  }
+
+  @media ${({ theme }) => theme.media.sm} {
+    order: 2;
+    max-width: 100%;
+    padding: 0 1.25rem;
+  }
 `;
 
 export const Name = styled.h1`
   font-size: ${({ theme }) => theme.typography.heading.size.h2};
+
+  @media ${({ theme }) => theme.media.xl} {
+    font-size: ${({ theme }) => theme.typography.heading.size.h3};
+  }
+
+  @media ${({ theme }) => theme.media.lg} {
+    font-size: ${({ theme }) => theme.typography.heading.size.h4};
+  }
+
+  @media ${({ theme }) => theme.media.md} {
+    font-size: ${({ theme }) => theme.typography.heading.size.h5};
+  }
 `;
 
 export const Title = styled.h2`
@@ -42,15 +90,38 @@ export const Title = styled.h2`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media ${({ theme }) => theme.media.xl} {
+    font-size: ${({ theme }) => theme.typography.heading.size.h2};
+  }
+
+  @media ${({ theme }) => theme.media.lg} {
+    font-size: ${({ theme }) => theme.typography.heading.size.h3};
+  }
+
+  @media ${({ theme }) => theme.media.sm} {
+    font-size: ${({ theme }) => theme.typography.heading.size.h2};
+  }
 `;
 
 export const Bio = styled.p`
   font-size: ${({ theme }) => theme.typography.heading.size.h6};
+
+  @media ${({ theme }) => theme.media.md} {
+    font: 12px;
+  }
 `;
 
 export const ImageContainer = styled.div`
   max-width: 40%;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+
+  @media ${({ theme }) => theme.media.md} {
+    order: 1;
+    width: 100%;
+  }
 `;
 
 export const Profile = styled.img`
@@ -60,15 +131,38 @@ export const Profile = styled.img`
   transition: border ease 0.2s, transform ease 0.5s;
   transform: rotate(5deg);
 
-
   &:hover {
-  border: 3px solid ${({ theme }) => theme.colors.primary};
-  transform: rotate(0);
+    border: 3px solid ${({ theme }) => theme.colors.primary};
+    transform: rotate(0);
+  }
 
+  @media ${({ theme }) => theme.media.xxl} {
+    max-width: 350px;
+  }
+
+  @media ${({ theme }) => theme.media.xl} {
+    max-width: 300px;
+  }
+
+  @media ${({ theme }) => theme.media.md} {
+    max-width: 400px;
+    transform: rotate(0);
   }
 `;
 
 export const ButtonContainer = styled.div`
   width: 100%;
-  padding: 0 100px;
+  padding: 0 100px 20px;
+  @media ${({ theme }) => theme.media.xl} {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media ${({ theme }) => theme.media.md} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
 `;

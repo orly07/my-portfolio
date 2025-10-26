@@ -9,6 +9,7 @@ export const theme = {
     primaryDark: "#2400ff",
 
     // Accent & Secondary
+
     accent: "#8750F7",
     accentDark: "#2a1454",
     secondary: "#2a1454",
@@ -75,8 +76,8 @@ export const theme = {
         black: 900,
       },
       size: {
-        h1: "65px",
-        h2: "45px",
+        h1: "60px",
+        h2: "40px",
         h3: "30px",
         h4: "24px",
         h5: "22px",
