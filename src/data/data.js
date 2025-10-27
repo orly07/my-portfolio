@@ -23,8 +23,7 @@ export const socials = [
 export const heroContent = {
   name: "I am Orlando",
   title: "Front-End Developer",
-  bio: `Passionate about creating responsive, user-friendly, and visually engaging web experiences. 
-          Dedicated to continuous learning and building impactful digital products.`,
+  bio: `I craft clean, responsive, and user-focused web interfaces with a passion for modern design and performance.`,
   profile: profile,
 };
 

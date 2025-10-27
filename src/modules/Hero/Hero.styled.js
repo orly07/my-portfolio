@@ -111,10 +111,6 @@ export const Title = styled.h2`
 
 export const Bio = styled.p`
   font-size: ${({ theme }) => theme.typography.heading.size.h6};
-
-  @media ${({ theme }) => theme.media.md} {
-    font-size: small;
-  }
 `;
 
 export const ImageContainer = styled.div`
