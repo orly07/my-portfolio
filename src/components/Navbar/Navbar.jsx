@@ -1,37 +1,25 @@
-import { useState, useEffect, useCallback, useMemo, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import * as S from "./Navbar.styled";
 import { navLinks } from "../../data/data";
 import logo from "../../assets/my-logo.webp";
-
-const GetinTouch = lazy(() => import("../Buttons/GetinTouch"));
+import GetinTouch from "../Buttons/GetinTouch"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    let ticking = false;
-    
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
-  const closeMenu = useCallback(() => setIsOpen(false), []);
+  const toggleMenu = () => setIsOpen(prev => !prev);
+  const closeMenu = () => setIsOpen(false);
 
-  const mobileNavLinks = useMemo(() => (
+  const renderNavLinks = (isMobile = false) => 
     navLinks.map(({ id, label, to, icon: Icon }) => (
       <li key={id}>
         <Link
@@ -41,39 +29,20 @@ const Navbar = () => {
           duration={1000}
           offset={-50}
           activeClass="active"
-          onClick={closeMenu}
+          onClick={isMobile ? closeMenu : undefined}
         >
-          {Icon && <Icon size={18} />}
+          {isMobile && Icon && <Icon size={18} />}
           <span>{label}</span>
         </Link>
       </li>
-    ))
-  ), [closeMenu]);
+    ));
 
-  const desktopNavLinks = useMemo(() => (
-    navLinks.map(({ id, label, to }) => (
-      <li key={id}>
-        <Link
-          to={to}
-          spy
-          smooth
-          duration={1000}
-          offset={-50}
-          activeClass="active"
-        >
-          <span>{label}</span>
-        </Link>
-      </li>
-    ))
-  ), []);
-
-  const currentYear = useMemo(() => new Date().getFullYear(), []);
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
       <S.NavbarWrapper $isScrolled={isScrolled}>
         <S.Container>
-          {/* Brand */}
           <S.Brand>
             <Link to="home" smooth duration={1000}>
               <S.Logo 
@@ -92,16 +61,12 @@ const Navbar = () => {
             <S.Heading2>rlando</S.Heading2>
           </S.Brand>
 
-          {/* Desktop Nav */}
           <S.NavlistDesktop>
-            {desktopNavLinks}
+            {renderNavLinks()}
           </S.NavlistDesktop>
 
-          {/* Mobile Menu Icon + HireMe */}
           <S.MobileControls>
-            <Suspense fallback={<div>Loading...</div>}>
-              <GetinTouch />
-            </Suspense>
+            <GetinTouch />
             <S.MenuIcon 
               onClick={toggleMenu} 
               aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -113,36 +78,25 @@ const Navbar = () => {
         </S.Container>
       </S.NavbarWrapper>
 
-      {/* Mobile Overlay */}
       <S.MobileOverlay 
         $isOpen={isOpen} 
         onClick={closeMenu} 
         aria-hidden={!isOpen}
       />
 
-      {/* Mobile Menu */}
       <S.NavlistMobile 
         $isOpen={isOpen} 
         aria-hidden={!isOpen}
       >
         <S.MobileHeader>
-          <S.Logo 
-            src={logo} 
-            alt="My Logo"
-            width="50"
-            height="50"
-          />
+          <S.Logo src={logo} alt="My Logo" width="50" height="50" />
           <S.Heading2>rlando</S.Heading2>
         </S.MobileHeader>
 
-        {mobileNavLinks}
-
-
+        {renderNavLinks(true)}
 
         <S.NavlistFooter>
-          <p>
-            Developed by Orlando Dela Cruz | &copy;{currentYear} All Rights Reserved
-          </p>
+          <p>Developed by Orlando Dela Cruz | &copy;{currentYear} All Rights Reserved</p>
         </S.NavlistFooter>
       </S.NavlistMobile>
     </>

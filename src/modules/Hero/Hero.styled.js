@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeroWrapper = styled.div`
+export const HeroWrapper = styled.section`
   min-height: 100vh;
   display: flex;
   flex-direction: column;

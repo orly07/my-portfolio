@@ -21,7 +21,7 @@ export const ButtonStyled = styled.button`
   );
   background-size: 300% auto;
   background-position: right;
-  transition: background-position 0.3s ease-in-out, transform 0.3s ease;
+  transition: background-position 0.3s ease-in-out;
 
   &:hover {
     background-position: center;

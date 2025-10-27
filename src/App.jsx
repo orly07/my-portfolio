@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import Navbar from "./components/Navbar";
-import Hero from "./modules/Hero";
+import LandingPage from "./pages/LandingPage";
 
 const Section = styled.section`
   height: 100vh;
@@ -21,15 +20,11 @@ const Section = styled.section`
 function App() {
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero id="home"/>
-        <Section id="about">About</Section>
-        <Section id="skills">Skills</Section>
-        <Section id="projects">Projects</Section>
-        <Section id="resume">Resume</Section>
-        <Section id="contact">Contact</Section>
-      </main>
+      <LandingPage />
+      <Section id="skills">Skills</Section>
+      <Section id="projects">Projects</Section>
+      <Section id="resume">Resume</Section>
+      <Section id="contact">Contact</Section>
     </>
   );
 }

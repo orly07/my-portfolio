@@ -1,7 +1,7 @@
-// src/data/data.js
 import { Home, User, Code, Briefcase, FileText, Mail } from "lucide-react";
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaGlobe } from "react-icons/fa";
 import profile from "../assets/my-profile.webp";
+
 // Navlinks
 export const navLinks = [
   { id: 1, label: "Home", to: "home", icon: Home },
@@ -24,5 +24,16 @@ export const heroContent = {
   title: "Front-End Developer",
   bio: `Passionate about creating responsive, user-friendly, and visually engaging web experiences. 
           Dedicated to continuous learning and building impactful digital products.`,
+  profile: profile,
+};
+
+export const aboutContent = {
+  title: "About",
+  subtitle: "Passionate Frontend Developer & Lifelong Learner",
+  intro: "Hello I'm",
+  name: "Orlando Dela Cruz",
+  description: `a BSIT student passionate about crafting clean, responsive, and user-friendly web interfaces. I enjoy turning 
+  ideas into functional designs using technologies like React, JavaScript, and CSS. My goal is to build digital experiences that 
+  are both beautiful and efficient.`,
   profile: profile,
 };
