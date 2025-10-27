@@ -23,12 +23,11 @@ const About = memo(({ id }) => {
           <S.Intro>{aboutContent.intro}</S.Intro>
           <S.Name>{aboutContent.name}</S.Name>
           <p>{aboutContent.description}</p>
-
-          <S.ButtonContainer>
-            <Download />
-          </S.ButtonContainer>
         </S.InfoContainer>
       </S.AboutContainer>
+      <S.ButtonContainer>
+        <Download />
+      </S.ButtonContainer>
     </S.AboutWrapper>
   );
 });

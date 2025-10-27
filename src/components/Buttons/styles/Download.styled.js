@@ -10,6 +10,7 @@ export const DownloadStyled = styled.button`
   color: ${({ theme }) => theme.colors.text.main};
   cursor: pointer;
   letter-spacing: 1px;
+  font-family: ${({theme}) => theme.typography.body.fontFamily};
 
   background: linear-gradient(
     90deg,

@@ -1,6 +1,7 @@
 import { Home, User, Code, Briefcase, FileText, Mail } from "lucide-react";
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaGlobe } from "react-icons/fa";
 import profile from "../assets/my-profile.webp";
+import aboutProfile from "../assets/working-img.webp";
 
 // Navlinks
 export const navLinks = [
@@ -35,5 +36,5 @@ export const aboutContent = {
   description: `a BSIT student passionate about crafting clean, responsive, and user-friendly web interfaces. I enjoy turning 
   ideas into functional designs using technologies like React, JavaScript, and CSS. My goal is to build digital experiences that 
   are both beautiful and efficient.`,
-  profile: profile,
+  profile: aboutProfile,
 };
