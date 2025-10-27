@@ -31,10 +31,10 @@ export const heroContent = {
 export const aboutContent = {
   title: "About",
   subtitle: "Passionate Frontend Developer & Lifelong Learner",
-  intro: "Hello I'm",
-  name: "Orlando Dela Cruz",
-  description: `a BSIT student passionate about crafting clean, responsive, and user-friendly web interfaces. I enjoy turning 
-  ideas into functional designs using technologies like React, JavaScript, and CSS. My goal is to build digital experiences that 
-  are both beautiful and efficient.`,
+  intro: "Hello!",
+  name: "I'm Orlando Dela Cruz",
+  description: `a BSIT student and aspiring frontend developer passionate about creating clean, interactive, and user-friendly web interfaces. I enjoy learning modern technologies like React, Vite, and Styled Components to build engaging digital experiences.
+  
+  Currently, I’m focusing on improving my skills in frontend development while working on personal projects that help me grow as a developer and problem-solver.`,
   profile: aboutProfile,
 };
