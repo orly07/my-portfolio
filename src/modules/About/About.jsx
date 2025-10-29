@@ -1,7 +1,7 @@
 import { memo } from "react";
 import * as S from "./About.styled";
 import { aboutContent } from "../../data/data";
-import Download from "../../components/Buttons/Download";
+import Download from "../../components/Buttons/Download/Download";
 
 const About = memo(({ id }) => {
   return (

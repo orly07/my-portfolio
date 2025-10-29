@@ -76,7 +76,7 @@ export const ImageContainer = styled.div`
 export const Profile = styled.img`
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.colors.primaryDark};
-  max-width: 250px;
+  max-width: 300px;
 
   @media ${({ theme }) => theme.media.md} {
     max-width: 150px;
@@ -119,7 +119,7 @@ export const Name = styled.h4`
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   width: 80%;
 
   @media ${({ theme }) => theme.media.md} {

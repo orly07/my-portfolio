@@ -1,4 +1,4 @@
-import * as S from "./styles/GetinToch.styled";
+import * as S from "./GetinToch.styled";
 import { Link } from "react-scroll";
 const GetinTouch = () => {
   return (

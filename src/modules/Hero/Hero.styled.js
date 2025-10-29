@@ -96,6 +96,31 @@ export const Title = styled.h2`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
+  /* caret */
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 1em;
+    margin-left: 0.5rem;
+    vertical-align: bottom;
+    background: currentColor;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::after {
+      animation: none;
+      opacity: 1;
+    }
+  }
+
   @media ${({ theme }) => theme.media.xl} {
     font-size: ${({ theme }) => theme.typography.heading.size.h2};
   }

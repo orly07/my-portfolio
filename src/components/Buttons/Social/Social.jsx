@@ -1,5 +1,5 @@
-import { socials } from "../../data/data";
-import { IconStyled, IconWrapper } from "./styles/Social.styled";
+import { socials } from "../../../data/data";
+import { IconStyled, IconWrapper } from "./Social.styled";
 
 const Social = () => {
   return (

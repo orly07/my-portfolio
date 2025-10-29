@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import * as S from "./Navbar.styled";
 import { navLinks } from "../../data/data";
 import logo from "../../assets/my-logo.webp";
-import GetinTouch from "../Buttons/GetinTouch"; 
+import GetinTouch from "../Buttons/GetinTouch/GetinTouch"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
