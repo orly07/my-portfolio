@@ -1274,6 +1274,11 @@ react-scroll@^1.9.3:
     lodash.throttle "^4.1.1"
     prop-types "^15.7.2"
 
+react-type@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-type/-/react-type-0.1.0.tgz#6c6d4aeb3bfd7ee89201427c43292b851f5d0230"
+  integrity sha512-j3dN/tiPC0/tGdz50X3sQHUssg3jNBNyAZpnz0C7Ih5fdvJYzYsucu+pCj4KdPu59BU74JpvhF56ekUwpuLHeQ==
+
 react@^19.1.1:
   version "19.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-19.2.0.tgz#d33dd1721698f4376ae57a54098cb47fc75d93a5"
