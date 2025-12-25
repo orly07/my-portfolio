@@ -11,7 +11,6 @@ export const ButtonStyled = styled.button`
   font-weight: ${({ theme }) => theme.typography.heading.weight.medium};
   color: ${({ theme }) => theme.colors.text.light};
 
-
   background: linear-gradient(
     90deg,
     ${({ theme }) => theme.colors.primary} 0%,

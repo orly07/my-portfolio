@@ -25,7 +25,7 @@ export const NavbarWrapper = styled.nav`
   ${({ $isScrolled, theme }) =>
     $isScrolled &&
     css`
-      padding: 20px 40px;
+      padding: 10px 40px;
       background: rgba(0, 0, 0, 0.9);
       backdrop-filter: blur(10px);
       box-shadow: 0 0 8px ${theme.colors.primary}66,

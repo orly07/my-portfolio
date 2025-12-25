@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import * as S from "./Navbar.styled";
 import { navLinks } from "../../data/data";
 import logo from "../../assets/my-logo.webp";
-import GetinTouch from "../Buttons/GetinTouch/GetinTouch"; 
+import GetinTouch from "../Buttons/GetinTouch/GetinTouch";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +16,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsOpen(prev => !prev);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
-  const renderNavLinks = (isMobile = false) => 
+  const renderNavLinks = (isMobile = false) =>
     navLinks.map(({ id, label, to, icon: Icon }) => (
       <li key={id}>
         <Link
@@ -45,9 +45,9 @@ const Navbar = () => {
         <S.Container>
           <S.Brand>
             <Link to="home" smooth duration={1000}>
-              <S.Logo 
-                src={logo} 
-                alt="My Logo" 
+              <S.Logo
+                src={logo}
+                alt="My Logo"
                 width="50"
                 height="50"
                 loading="eager"
@@ -55,20 +55,18 @@ const Navbar = () => {
             </Link>
             <S.Heading>
               <Link to="home" smooth duration={1000}>
-                mail@delacruzorlando776
+                @delacruzorlando776
               </Link>
             </S.Heading>
             <S.Heading2>rlando</S.Heading2>
           </S.Brand>
 
-          <S.NavlistDesktop>
-            {renderNavLinks()}
-          </S.NavlistDesktop>
+          <S.NavlistDesktop>{renderNavLinks()}</S.NavlistDesktop>
 
           <S.MobileControls>
             <GetinTouch />
-            <S.MenuIcon 
-              onClick={toggleMenu} 
+            <S.MenuIcon
+              onClick={toggleMenu}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
             >
@@ -78,16 +76,13 @@ const Navbar = () => {
         </S.Container>
       </S.NavbarWrapper>
 
-      <S.MobileOverlay 
-        $isOpen={isOpen} 
-        onClick={closeMenu} 
+      <S.MobileOverlay
+        $isOpen={isOpen}
+        onClick={closeMenu}
         aria-hidden={!isOpen}
       />
 
-      <S.NavlistMobile 
-        $isOpen={isOpen} 
-        aria-hidden={!isOpen}
-      >
+      <S.NavlistMobile $isOpen={isOpen} aria-hidden={!isOpen}>
         <S.MobileHeader>
           <S.Logo src={logo} alt="My Logo" width="50" height="50" />
           <S.Heading2>rlando</S.Heading2>
@@ -96,7 +91,10 @@ const Navbar = () => {
         {renderNavLinks(true)}
 
         <S.NavlistFooter>
-          <p>Developed by Orlando Dela Cruz | &copy;{currentYear} All Rights Reserved</p>
+          <p>
+            Developed by Orlando Dela Cruz | &copy;{currentYear} All Rights
+            Reserved
+          </p>
         </S.NavlistFooter>
       </S.NavlistMobile>
     </>

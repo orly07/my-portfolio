@@ -17,7 +17,6 @@ export const ButtonStyled = styled.button`
   transition: background-color ease 0.2s;
   cursor: pointer;
 
-
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
     border: 1px solid ${({ theme }) => theme.colors.primaryLight};
@@ -26,6 +25,6 @@ export const ButtonStyled = styled.button`
 
   @media ${({ theme }) => theme.media.sm} {
     padding: 10px 20px;
-    font-size: ${({theme}) => theme.typography.body.fontSize};
+    font-size: ${({ theme }) => theme.typography.body.fontSize};
   }
 `;

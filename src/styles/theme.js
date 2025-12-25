@@ -1,5 +1,3 @@
-// src/styles/theme.js
-
 export const theme = {
   // 🎨 COLORS - Blue Palette
   colors: {
@@ -55,7 +53,7 @@ export const theme = {
     },
   },
 
-  // ✍️ TYPOGRAPHY
+  //  TYPOGRAPHY
   typography: {
     body: {
       fontFamily: "'Sora', sans-serif",
@@ -76,11 +74,11 @@ export const theme = {
         black: 900,
       },
       size: {
-        h1: "60px",
+        h1: "45px",
         h2: "40px",
         h3: "30px",
-        h4: "24px",
-        h5: "22px",
+        h4: "25px",
+        h5: "20px",
         h6: "18px",
         subtitle: "36px",
       },
@@ -93,7 +91,7 @@ export const theme = {
     },
   },
 
-  // 🧱 TEXT VARIANTS
+  // TEXT VARIANTS
   textVariants: {
     primary: {
       fontFamily: "'Roboto', sans-serif",
@@ -114,11 +112,11 @@ export const theme = {
   },
 
   media: {
-    xs: "(max-width: 480px)", // Mobile (portrait)
-    sm: "(max-width: 576px)", // Mobile (landscape)
-    md: "(max-width: 768px)", // Tablets
-    lg: "(max-width: 992px)", // Small laptops
-    xl: "(max-width: 1200px)", // Desktops
-    xxl: "(max-width: 1400px)", // Large screens
+    xs: "(max-width: 480px)",
+    sm: "(max-width: 576px)",
+    md: "(max-width: 767px)",
+    lg: "(max-width: 1025px)",
+    xl: "(max-width: 1200px)",
+    xxl: "(max-width: 1400px)",
   },
 };

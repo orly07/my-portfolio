@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 export const HeroWrapper = styled.section`
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.background.main};
 
-  @media ${({ theme }) => theme.media.md} {
+  @media ${({ theme }) => theme.media.lg} {
     height: 100%;
+  }
+
+  @media ${({ theme }) => theme.media.md} {
+    min-height: 100vh;
   }
 `;
 
@@ -20,6 +24,7 @@ export const HeroContainer = styled.div`
   padding: 8rem 3rem 0;
   min-width: 100%;
   gap: 1.5rem;
+  overflow: hidden;
 
   @media ${({ theme }) => theme.media.xl} {
     padding: 8rem 3rem 0;

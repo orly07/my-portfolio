@@ -1,11 +1,10 @@
 import styled from "styled-components";
-
 export const AboutWrapper = styled.section`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem;
+  justify-content: center;
+  padding: 2rem 4rem;
   background-color: ${({ theme }) => theme.colors.background.dark};
 
   @media ${({ theme }) => theme.media.md} {
@@ -22,20 +21,11 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: ${({ theme }) => theme.typography.heading.size.h1};
-  line-height: 1.2;
-  overflow-y: hidden;
-
-  background: linear-gradient(
-    90deg,
-    ${({ theme }) => theme.colors.primaryDark} 0%,
-    ${({ theme }) => theme.colors.primary} 50%,
-    ${({ theme }) => theme.colors.primaryLight} 100%
-  );
-
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: ${({ theme }) => theme.typography.body.fontFamily};
+  font-size: ${({ theme }) => theme.typography.heading.size.h2};
+  font-weight: ${({ theme }) => theme.typography.heading.weight.bold};
+  color: ${({ theme }) => theme.colors.text.main};
+  margin-bottom: 0.5rem;
 
   @media ${({ theme }) => theme.media.md} {
     font-size: ${({ theme }) => theme.typography.heading.size.h2};
@@ -43,12 +33,11 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
-  font-weight: ${({ theme }) => theme.typography.heading.weight.regular};
-
-  @media ${({ theme }) => theme.media.md} {
-    font-size: ${({ theme }) => theme.typography.heading.size.h6};
-  }
-
+  font-family: ${({ theme }) => theme.typography.body.fontFamily};
+  font-size: 18px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.text.muted};
+  margin-bottom: 2rem;
   text-align: center;
 `;
 
@@ -62,15 +51,49 @@ export const AboutContainer = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const BadgeWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 50%;
-  border: 2px solid ${({ theme }) => theme.colors.primary};
-  padding: 10px;
+  padding: 50px;
+
+  @media ${({ theme }) => theme.media.sm} {
+    padding: 0;
+    min-width: 100%;
+    height: auto;
+  }
+`;
+
+export const Badge = styled.div`
+  position: absolute;
+  height: 80px;
+  width: 100px;
+  top: ${({ $top }) => ($top ? $top : "140px")};
+  right: ${({ $right }) => ($right ? $right : "10px")};
+  background-color: ${({ theme }) => theme.colors.primaryDark};
+  border: 3px solid ${({ theme }) => theme.colors.primary};
   border-radius: 50%;
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media ${({ theme }) => theme.media.lg} {
+    display: none;
+  }
+
+  @media ${({ theme }) => theme.media.sm} {
+    display: none;
+  }
 `;
 
 export const Profile = styled.img`
@@ -79,7 +102,11 @@ export const Profile = styled.img`
   max-width: 300px;
 
   @media ${({ theme }) => theme.media.md} {
-    max-width: 150px;
+    max-width: 300px;
+  }
+
+  @media ${({ theme }) => theme.media.sm} {
+    display: none;
   }
 `;
 
@@ -114,13 +141,22 @@ export const Intro = styled.h3`
 export const Name = styled.h4`
   font-size: ${({ theme }) => theme.typography.heading.size.h3};
   margin-bottom: 0.5rem;
+
+  @media ${({ theme }) => theme.media.sm} {
+    font-size: ${({ theme }) => theme.typography.heading.size.h4};
+  }
+`;
+
+export const Description = styled.p`
+  font-size: ${({ theme }) => theme.typography.body.fontSize};
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 80%;
+  justify-content: start;
+  width: 100%;
+  margin-top: 1rem;
 
   @media ${({ theme }) => theme.media.md} {
     margin-top: 2rem;
