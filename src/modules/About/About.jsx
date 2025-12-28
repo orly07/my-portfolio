@@ -1,17 +1,17 @@
 import { memo } from "react";
 import { Link } from "react-scroll";
 import * as S from "./About.styled";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { aboutContent } from "../../data/data";
 import Download from "../../components/Buttons/Download/Download";
 
 const About = memo(({ id }) => {
   return (
     <S.AboutWrapper id={id}>
-      <S.HeaderContainer>
-        <S.Title>{aboutContent.title}</S.Title>
-        <S.SubTitle>{aboutContent.subtitle}</S.SubTitle>
-      </S.HeaderContainer>
-
+      <SectionTitle
+        title={aboutContent.title}
+        subtitle={aboutContent.subtitle}
+      />
       <S.AboutContainer>
         <S.BadgeWrapper>
           <Link to="projects" smooth={true} duration={1000} spy={true}>

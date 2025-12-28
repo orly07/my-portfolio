@@ -1,6 +1,7 @@
 import { lazy, memo, useState, Suspense } from "react";
 import * as S from "./Skills.styled";
-import { skillsContent } from "../../data/data";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { aboutContent, skillsContent } from "../../data/data";
 
 const SkillsFilter = lazy(() =>
   import("../../components/Filter/SkillsFilter/SkillsFilter")
@@ -21,10 +22,10 @@ const Skills = memo(({ id }) => {
 
   return (
     <S.SkillWrapper id={id}>
-      <S.HeaderContainer>
-        <S.Title>{skillsContent.title}</S.Title>
-        <S.Subtitle>{skillsContent.subtitle}</S.Subtitle>
-      </S.HeaderContainer>
+      <SectionTitle
+        title={skillsContent.title}
+        subtitle={aboutContent.subtitle}
+      />
 
       <Suspense fallback={null}>
         <SkillsFilter

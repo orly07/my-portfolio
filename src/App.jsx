@@ -21,7 +21,6 @@ function App() {
   return (
     <>
       <LandingPage />
-      <Section id="projects">Projects</Section>
       <Section id="resume">Resume</Section>
       <Section id="contact">Contact</Section>
     </>

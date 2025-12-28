@@ -140,3 +140,8 @@ export const skillsContent = {
     },
   ],
 };
+
+export const projectsContent = {
+  title: "Projects",
+  subtitle: "lorem ipsum dolor sit emet de lactura san vintegua.",
+};

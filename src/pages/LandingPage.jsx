@@ -5,6 +5,7 @@ import Hero from "../modules/Hero";
 
 const About = lazy(() => import("../modules/About"));
 const Skills = lazy(() => import("../modules/Skills"));
+const Projects = lazy(() => import("../modules/Projects"));
 
 const LandingPage = () => {
   return (
@@ -18,6 +19,10 @@ const LandingPage = () => {
 
         <Suspense fallback={<div>Loading...</div>}>
           <Skills id="skills" />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading...</div>}>
+          <Projects id="projects" />
         </Suspense>
       </main>
     </>
