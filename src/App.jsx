@@ -1,28 +1,11 @@
-import styled from "styled-components";
-import LandingPage from "./pages/LandingPage";
-
-const Section = styled.section`
-  height: 100vh;
-  margin: ${({ m }) => m || "0"};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: ${({ theme }) => theme.typography.heading.size.h1};
-  color: ${({ theme }) => theme.colors.text.light};
-  background-color: ${({ theme }) => theme.colors.background.dark};
-  transition: all 0.3s ease;
-
-  ${({ theme }) => theme.media.mobile} {
-    font-size: ${({ theme }) => theme.typography.heading.size.h3};
-  }
-`;
+import AppRoutes from "./routes/AppRoutes";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <>
-      <LandingPage />
-      <Section id="resume">Resume</Section>
-      <Section id="contact">Contact</Section>
+      <ScrollToTop />
+      <AppRoutes />
     </>
   );
 }

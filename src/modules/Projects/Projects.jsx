@@ -1,16 +1,21 @@
 import { memo } from "react";
-import * as S from "./Projects.styled";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
-import { projectsContent } from "../../data/data";
+import ProjectCards from "../../components/Cards/ProjectCards/ProjectCards";
+import * as S from "./Projects.styled";
+import { projectSection } from "../../data/projects";
 
 const Projects = memo(({ id }) => {
   return (
-    <S.ProjectsWrapper id={id}>
-      <SectionTitle
-        title={projectsContent.title}
-        subtitle={projectsContent.subtitle}
-      />
-    </S.ProjectsWrapper>
+    <>
+      <S.ProjectWrapper id={id}>
+        <SectionTitle
+          title={projectSection.title}
+          subtitle={projectSection.subtitle}
+        />
+
+        <ProjectCards />
+      </S.ProjectWrapper>
+    </>
   );
 });
 

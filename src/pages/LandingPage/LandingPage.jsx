@@ -1,11 +1,11 @@
 // src/pages/LandingPage.jsx
 import { lazy, Suspense } from "react";
-import Navbar from "../components/Navbar";
-import Hero from "../modules/Hero";
+import Navbar from "../../components/Navbar";
+import Hero from "../../modules/Hero";
 
-const About = lazy(() => import("../modules/About"));
-const Skills = lazy(() => import("../modules/Skills"));
-const Projects = lazy(() => import("../modules/Projects"));
+const About = lazy(() => import("../../modules/About"));
+const Skills = lazy(() => import("../../modules/Skills"));
+const Projects = lazy(() => import("../../modules/Projects"));
 
 const LandingPage = () => {
   return (

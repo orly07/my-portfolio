@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export const ProjectsWrapper = styled.section`
+export const ProjectWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem 4rem;
-  background-color: ${({ theme }) => theme.colors.background.main};
+  background-color: ${({ theme }) => theme.colors.background.dark};
 
   @media ${({ theme }) => theme.media.md} {
-    padding: 4rem 2rem;
+    padding: 2rem;
   }
 `;

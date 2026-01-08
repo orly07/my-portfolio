@@ -8,7 +8,7 @@ export const SkillWrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.background.dark};
 
   @media ${({ theme }) => theme.media.md} {
-    padding: 4rem 2rem;
+    padding: 2rem;
   }
 `;
 

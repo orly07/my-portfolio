@@ -5,6 +5,7 @@ export const theme = {
     primary: "#2563eb", // Vibrant blue
     primaryLight: "#4086f8ff", // Lighter blue
     primaryDark: "#1646ccff", // Darker blue
+    dark: "#182749ff",
 
     // Accent & Secondary - Blue variants
     accent: "#60a5fa", // Soft blue accent
@@ -21,18 +22,19 @@ export const theme = {
       deep: "#0f172a", // Deep blue-black
     },
 
+    // Borders
+    border: {
+      light: "#f8fafc",
+      dark: "#2222222",
+      primary: "#2563eb",
+    },
+
     // Text
     text: {
       main: "#f1f5f9", // Light blue-gray
       light: "#f8fafc", // Very light blue
       dark: "#000000", // Black
       muted: "#64748b", // Muted blue-gray
-    },
-
-    // Borders
-    border: {
-      light: "#334155", // Medium blue-gray
-      dark: "#1e293b", // Dark blue-gray
     },
 
     // Grayscale - Blue tinted
@@ -43,7 +45,8 @@ export const theme = {
       400: "#94a3b8", // Medium blue-gray
       500: "#64748b", // Blue-gray
       600: "#475569", // Dark blue-gray
-      700: "#334155", // Darker blue-gray
+      700: "#334155",
+      800: "#121820ff", // Darker blue-gray
     },
 
     // Scrollbar
@@ -60,7 +63,7 @@ export const theme = {
       fontSize: "16px",
       fontWeight: 400,
       lineHeight: 1.6,
-      footerText: "12px",
+      small: "12px",
     },
 
     heading: {
