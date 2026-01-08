@@ -1,5 +1,8 @@
 import styled from "styled-components";
-export const AboutWrapper = styled.section`
+import { motion } from "framer-motion";
+
+// Wrapper for the entire About section
+export const AboutWrapper = styled(motion.section)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,46 +15,22 @@ export const AboutWrapper = styled.section`
   }
 `;
 
-export const HeaderContainer = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
-`;
+export const MotionBlock = styled(motion.div)``;
 
-export const Title = styled.h1`
-  font-family: ${({ theme }) => theme.typography.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.heading.size.h2};
-  font-weight: ${({ theme }) => theme.typography.heading.weight.bold};
-  color: ${({ theme }) => theme.colors.text.main};
-  margin-bottom: 0.5rem;
-
-  @media ${({ theme }) => theme.media.md} {
-    font-size: ${({ theme }) => theme.typography.heading.size.h2};
-  }
-`;
-
-export const SubTitle = styled.h2`
-  font-family: ${({ theme }) => theme.typography.body.fontFamily};
-  font-size: 18px;
-  font-weight: 500;
-  color: ${({ theme }) => theme.colors.text.muted};
-  margin-bottom: 2rem;
-  text-align: center;
-`;
-
+// Container for badges and info
 export const AboutContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 
   @media ${({ theme }) => theme.media.md} {
     flex-direction: column;
   }
 `;
 
-export const BadgeWrapper = styled.div`
+// Motion-enabled wrapper for badges & profile
+export const BadgeWrapper = styled(motion.div)`
   position: relative;
   display: flex;
   justify-content: center;
@@ -66,7 +45,8 @@ export const BadgeWrapper = styled.div`
   }
 `;
 
-export const Badge = styled.div`
+// Motion-enabled badge
+export const Badge = styled(motion.div)`
   position: absolute;
   height: 80px;
   width: 100px;
@@ -81,6 +61,7 @@ export const Badge = styled.div`
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  z-index: 2;
 
   &:hover {
     transform: translateY(-5px);
@@ -96,7 +77,8 @@ export const Badge = styled.div`
   }
 `;
 
-export const Profile = styled.img`
+// Motion-enabled profile image
+export const Profile = styled(motion.img)`
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.colors.primaryDark};
   max-width: 300px;
@@ -110,18 +92,24 @@ export const Profile = styled.img`
   }
 `;
 
+// Info container for intro, name, description, button
 export const InfoContainer = styled.div`
   max-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: start;
+  overflow: hidden;
 
   @media ${({ theme }) => theme.media.md} {
     min-width: 100%;
+    margin-top: 2rem;
+    align-items: center;
+    text-align: center;
   }
 `;
 
-export const Intro = styled.h3`
+// Intro text with gradient effect
+export const Intro = styled(motion.h3)`
   font-size: ${({ theme }) => theme.typography.heading.size.h3};
   line-height: 1;
   overflow-y: hidden;
@@ -138,7 +126,8 @@ export const Intro = styled.h3`
   -webkit-text-fill-color: transparent;
 `;
 
-export const Name = styled.h4`
+// Name heading
+export const Name = styled(motion.h4)`
   font-size: ${({ theme }) => theme.typography.heading.size.h3};
   margin-bottom: 0.5rem;
 
@@ -147,11 +136,13 @@ export const Name = styled.h4`
   }
 `;
 
-export const Description = styled.p`
+// Description paragraph
+export const Description = styled(motion.p)`
   font-size: ${({ theme }) => theme.typography.body.fontSize};
 `;
 
-export const ButtonContainer = styled.div`
+// Button container
+export const ButtonContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: start;

@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const IconWrapper = styled.span`
+export const IconWrapper = styled(motion.span)`
   display: inline-flex;
   align-items: center;
   margin-left: 20px;
 
-  @media ${({theme}) => theme.media.sm} {
+  @media ${({ theme }) => theme.media.sm} {
     margin-left: 0;
   }
 `;
 
-export const IconStyled = styled.a`
+export const IconStyled = styled(motion.a)`
   position: relative;
   display: inline-flex;
   justify-content: center;

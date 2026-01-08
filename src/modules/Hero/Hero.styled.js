@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const HeroWrapper = styled.section`
   height: 100vh;
@@ -16,7 +17,7 @@ export const HeroWrapper = styled.section`
   }
 `;
 
-export const HeroContainer = styled.div`
+export const HeroContainer = styled(motion.div)`
   display: flex;
   flex: 1;
   justify-content: center;
@@ -46,8 +47,9 @@ export const HeroContainer = styled.div`
   }
 `;
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled(motion.div)`
   max-width: 60%;
+  overflow: hidden;
 
   @media ${({ theme }) => theme.media.md} {
     order: 2;
@@ -62,7 +64,7 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const Name = styled.h1`
+export const Name = styled(motion.h1)`
   font-size: ${({ theme }) => theme.typography.heading.size.h2};
 
   @media ${({ theme }) => theme.media.xl} {
@@ -82,7 +84,7 @@ export const Name = styled.h1`
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled(motion.h2)`
   font-size: ${({ theme }) => theme.typography.heading.size.h1};
   font-weight: ${({ theme }) => theme.typography.heading.weight.bold};
   line-height: 1.2;
@@ -139,11 +141,11 @@ export const Title = styled.h2`
   }
 `;
 
-export const Bio = styled.p`
+export const Bio = styled(motion.p)`
   font-size: ${({ theme }) => theme.typography.heading.size.h6};
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled(motion.div)`
   max-width: 40%;
   padding: 20px;
   display: flex;
@@ -155,7 +157,7 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const Profile = styled.img`
+export const Profile = styled(motion.img)`
   max-width: 400px;
   border: 3px solid ${({ theme }) => theme.colors.accentDark};
   border-radius: 1.75rem;
@@ -181,7 +183,7 @@ export const Profile = styled.img`
   }
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled(motion.div)`
   min-width: 100%;
   padding: 0 100px 20px;
   @media ${({ theme }) => theme.media.xl} {

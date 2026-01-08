@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import * as S from "./Contact.styled";
+import { fadeUp, staggerContainer } from "../../animations/animation";
 
 const Contact = () => {
   const formRef = useRef();
@@ -33,11 +34,19 @@ const Contact = () => {
   };
 
   return (
-    <S.ContactWrapper id="contact">
-      <S.Title>Contact Me</S.Title>
-      <S.Subtitle>Have a project or question? Let’s talk.</S.Subtitle>
+    <S.ContactWrapper
+      id="contact"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.4 }}
+    >
+      <S.Title variants={fadeUp}>Contact Me</S.Title>
+      <S.Subtitle variants={fadeUp}>
+        Have a project or question? Let’s talk.
+      </S.Subtitle>
 
-      <S.Form ref={formRef} onSubmit={sendEmail}>
+      <S.Form ref={formRef} onSubmit={sendEmail} variants={fadeUp}>
         <S.Input type="text" name="name" placeholder="Your Name" required />
 
         <S.Input type="email" name="email" placeholder="Your Gmail" required />
