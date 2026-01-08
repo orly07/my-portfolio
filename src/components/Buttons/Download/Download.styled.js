@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DownloadStyled = styled.button`
+export const DownloadStyled = styled.a`
   display: flex;
   align-items: center;
   gap: 5px;
@@ -10,7 +10,8 @@ export const DownloadStyled = styled.button`
   color: ${({ theme }) => theme.colors.text.main};
   cursor: pointer;
   letter-spacing: 1px;
-  font-family: ${({theme}) => theme.typography.body.fontFamily};
+  font-family: ${({ theme }) => theme.typography.body.fontFamily};
+  text-decoration: none;
 
   background: linear-gradient(
     90deg,

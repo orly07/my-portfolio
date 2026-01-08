@@ -1,6 +1,12 @@
 // src/data/data.js
 import { Home, User, Code, Briefcase, FileText, Mail } from "lucide-react";
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaGlobe } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaGithub,
+  FaLinkedinIn,
+  FaInstagramSquare,
+} from "react-icons/fa";
+
 import profile from "../assets/my-profile.webp";
 import aboutProfile from "../assets/working-img.webp";
 
@@ -10,15 +16,22 @@ export const navLinks = [
   { id: 2, label: "About", to: "about", icon: User },
   { id: 3, label: "Skills", to: "skills", icon: Code },
   { id: 4, label: "Projects", to: "projects", icon: Briefcase },
-  { id: 5, label: "Resume", to: "resume", icon: FileText },
-  { id: 6, label: "Contact", to: "contact", icon: Mail },
+  // { id: 5, label: "Resume", to: "resume", icon: FileText },
+  { id: 5, label: "Contact", to: "contact", icon: Mail },
 ];
 
 export const socials = [
-  { id: 1, icon: FaFacebookF },
-  { id: 2, icon: FaGithub },
-  { id: 3, icon: FaLinkedinIn },
-  { id: 4, icon: FaGlobe },
+  {
+    id: 1,
+    icon: FaFacebookF,
+    link: "https://web.facebook.com/orlando.arcangel/",
+  },
+  { id: 2, icon: FaGithub, link: "https://github.com/orly07" },
+  {
+    id: 3,
+    icon: FaLinkedinIn,
+    link: "https://www.linkedin.com/in/dela-cruz-orlando-jr-a-127998273/",
+  },
 ];
 
 export const heroContent = {

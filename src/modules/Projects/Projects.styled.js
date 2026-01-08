@@ -6,7 +6,7 @@ export const ProjectWrapper = styled.section`
   align-items: center;
   justify-content: center;
   padding: 2rem 4rem;
-  background-color: ${({ theme }) => theme.colors.background.dark};
+  background-color: ${({ theme }) => theme.colors.background.main};
 
   @media ${({ theme }) => theme.media.md} {
     padding: 2rem;
