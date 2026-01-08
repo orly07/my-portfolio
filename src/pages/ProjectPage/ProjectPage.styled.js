@@ -9,6 +9,10 @@ export const ProjectBreadcrumb = styled(Breadcrumb)`
   ol {
     align-items: center;
     font-size: ${({ theme }) => theme.typography.body.fontSize};
+
+    @media ${({ theme }) => theme.media.md} {
+      font-size: ${({ theme }) => theme.typography.body.small};
+    }
   }
 
   li {
@@ -18,6 +22,10 @@ export const ProjectBreadcrumb = styled(Breadcrumb)`
   li:last-child {
     font-weight: bold;
     font-size: ${({ theme }) => theme.typography.heading.size.h6};
+
+    @media ${({ theme }) => theme.media.md} {
+      font-size: ${({ theme }) => theme.typography.body.fontSize};
+    }
   }
 
   .ant-breadcrumb-separator {
