@@ -23,7 +23,7 @@ export const SkillsGrid = styled.div`
   overflow: hidden;
 
   @media ${({ theme }) => theme.media.sm} {
-    max-height: ${({ $expanded }) => ($expanded ? "1000px" : "310px")};
+    max-height: ${({ $expanded }) => ($expanded ? "100%" : "290px")};
     transition: max-height 0.4s ease;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
